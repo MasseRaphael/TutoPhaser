@@ -22,19 +22,19 @@ export default class Game extends Phaser.Scene
     create()
     {
         this.add.image(400, 300, 'sky');
-        this.add.image(400, 568, 'ground').setScale(2).refreshBody();
+        this.add.image(400, 568, 'ground').setScale(2);
 
-        /*const platforms = this.physics.add.staticGroup();
+        const platforms = this.physics.add.staticGroup();
 
-        for(let i = 0; i < 3; ++i)
+        for(let i = 1; i < 4; ++i)
         {
-            const x = Phaser.Math.Between(0, 800);
-            const y = 300 * i;
+            const x = Phaser.Math.Between(50, 750);
+            const y = 150 * i;
 
             const platform = platforms.create(x, y, 'ground');
             const body = platform.body;
             body.updateFromGameObject();
-        }*/
+        }
     }
 
     update()

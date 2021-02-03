@@ -14,6 +14,7 @@ export default new Phaser.Game({
             },
             debug: true,
         },
+    }
 });
 
 console.dir(Phaser);
