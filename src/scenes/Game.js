@@ -71,6 +71,8 @@ export default class Game extends Phaser.Scene
 
         this.physics.add.collider(this.player, ground);
         this.physics.add.collider(this.player, this.platforms);
+
+        this.player.body.checkCollision.up = false;
     }
 
     update()
