@@ -181,6 +181,11 @@ export default class Game extends Phaser.Scene
 
         player.anims.play('turn');
 
-        gameOver = this.scene.start('game-over');
+        this.gameOver();
+    }
+
+    gameOver()
+    {
+        this.scene.start('game-over');
     }
 }
