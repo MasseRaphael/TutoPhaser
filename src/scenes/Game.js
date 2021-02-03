@@ -51,7 +51,7 @@ export default class Game extends Phaser.Scene
             const platform = this.platforms.create(x, y, 'platform');
             const body = platform.body;
             body.updateFromGameObject();
-        };
+        }
 
         this.player = this.physics.add.sprite(100, 450, 'dude');
 
@@ -145,6 +145,7 @@ export default class Game extends Phaser.Scene
         {
             this.player.setVelocityY(-330);
         }
+
     }
 
     collectStar(player, star)
@@ -186,6 +187,6 @@ export default class Game extends Phaser.Scene
 
     gameOver()
     {
-        this.scene.start('game-over');
+        this.scene.start('game-over', { score: this.score});
     }
 }
