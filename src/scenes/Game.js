@@ -2,9 +2,11 @@ import Phaser from '../lib/phaser.js';
 
 export default class Game extends Phaser.Scene
 {
-    player
-    platforms
-    cursors
+    player;
+    platforms;
+    cursors;
+    score;
+    
 
     constructor()
     {
@@ -73,6 +75,27 @@ export default class Game extends Phaser.Scene
         this.physics.add.collider(this.player, this.platforms);
 
         this.player.body.checkCollision.up = false;
+
+        const stars = this.physics.add.group({
+            key: 'star',
+            repeat: 11,
+            setXY: { x: 12, y: 0, stepX: 70 },
+        });
+
+        stars.children.iterate(function (child) {
+            child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
+        })
+
+        this.physics.add.collider(stars, this.platforms);
+        this.physics.add.collider(stars, ground);
+
+        this.physics.add.overlap(
+            this.player,
+            stars,
+            this.collectStar,
+            null,
+            this
+        );
     }
 
     update()
@@ -100,5 +123,10 @@ export default class Game extends Phaser.Scene
         {
             this.player.setVelocityY(-330);
         }
+    }
+
+    collectStar(player, star)
+    {
+        star.disableBody(true, true);
     }
 }
