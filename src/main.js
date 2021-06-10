@@ -13,7 +13,7 @@ export default new Phaser.Game({
             gravity: { 
                 y: 300
             },
-            debug: true,
+            //debug: true,
         },
     }
 });
