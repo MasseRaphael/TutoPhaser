@@ -9,4 +9,4 @@ Au chargement du niveau les plateformes aléatoire.
 
 ## Demo
 
-[Vercel](https://tuto-phaser.vercel.app/)
+Sur [Vercel](https://tuto-phaser.vercel.app/)
