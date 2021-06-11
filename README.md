@@ -6,3 +6,7 @@ Exercice d'apprentissage sur le tutoriel officiel de phaser avec des variations 
 
 Modification du mode "d'installation" : utilisation de la methode de du tutoriel bunny jump.
 Au chargement du niveau les plateformes aléatoire.
+
+## Demo
+
+https://tuto-phaser.vercel.app/
